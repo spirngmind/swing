@@ -1,4 +1,4 @@
-package basic;
+package basic.other;
 
 import javax.swing.*;
 

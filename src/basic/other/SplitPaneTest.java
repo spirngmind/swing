@@ -1,9 +1,8 @@
-package basic;
+package basic.other;
 
 import bean.Book;
 
 import javax.swing.*;
-import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 
 /**

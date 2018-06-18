@@ -1,10 +1,10 @@
-package basic;
+package basic.other;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.InputEvent;
 
-public class SwingComponent {
+public class SwingComponentBak {
     JFrame f = new JFrame("测试");
 
     JButton ok = new JButton("确认");
@@ -102,7 +102,7 @@ public class SwingComponent {
     }
 
     public static void main(String[] args) {
-        new SwingComponent().init();
+        new SwingComponentBak().init();
     }
 
 }
