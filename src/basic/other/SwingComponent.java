@@ -19,7 +19,9 @@ public class SwingComponent {
     JComboBox<String> colorChooser = new JComboBox<>(colors);
     JList<String> colorlist = new JList<>(colors);
 
-    JTextArea ta = new JTextArea(8,20);
+//    JTextArea ta = new JTextArea(8,20);
+    JPanel ta= new JPanel();
+
     JTextField name = new JTextField(40);
 
     JMenuBar mb = new JMenuBar();
@@ -54,6 +56,10 @@ public class SwingComponent {
 
         Box topLeft = Box.createVerticalBox();
 
+//        ta.setSize(new Dimension(700,800));
+        ta.setMinimumSize(new Dimension(500,400));
+        ta.setPreferredSize(new Dimension(500,400));
+        ta.setBackground(Color.red);
         JScrollPane taJsp = new JScrollPane(ta);
         topLeft.add(taJsp);
         topLeft.add(checkPanel);
@@ -65,7 +71,7 @@ public class SwingComponent {
         f.add(top);
 
         newItem.setAccelerator(KeyStroke.getKeyStroke('N',InputEvent.CTRL_MASK));
-        newItem.addActionListener(e->ta.append("用户单击了dd'新建'菜单\n"));
+//        newItem.addActionListener(e->ta.append("用户单击了dd'新建'菜单\n"));
 
         file.add(newItem);
         file.add(saveItem);

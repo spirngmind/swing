@@ -19,6 +19,8 @@ import java.util.ArrayList;
 public class Codeflow {
     JFrame frame=new JFrame("codeflow");
     JPanel mainPanel=new JPanel();
+    JScrollPane contentjscPanel;
+
     JPanel reportPanel=new JPanel();
     JPanel detailPanel=new JPanel();
     JPanel pagerPanel=new JPanel();
@@ -38,10 +40,14 @@ public class Codeflow {
         pager=new Pager(highDetails.size(),highDetails);
 //        frame.setBounds(40,40,650,570);
         frame.setBounds(40,40,650,470);
-        frame.setLayout(null);
+        frame.setLayout(new BorderLayout());
+
+
 
 //        mainPanel.setBounds(0,0,650,570);
-        mainPanel.setBounds(0,0,650,470);
+        mainPanel.setBounds(0,0,650,370);
+        mainPanel.setMinimumSize(new Dimension(650,370));
+        mainPanel.setPreferredSize(new Dimension(650,370));
         mainPanel.setLayout(null);
 
         reportPanel.setBounds(0,0,650,65);
@@ -50,14 +56,17 @@ public class Codeflow {
         detailPanel.setBounds(0,70,650,290);
 //        detailPanel.setBackground(Color.red);
 
-        pagerPanel.setBounds(0,380,650,50);
+//        pagerPanel.setBounds(0,380,650,50);
 //        pagerPanel.setBackground(Color.green);
 
         mainPanel.add(reportPanel);
         mainPanel.add(detailPanel);
-        mainPanel.add(pagerPanel);
-        frame.add(mainPanel);
-
+//        mainPanel.add(pagerPanel);
+//        frame.add(mainPanel);
+        contentjscPanel=new JScrollPane(mainPanel);
+        frame.add(contentjscPanel,BorderLayout.CENTER);
+//        frame.add(mainPanel,BorderLayout.CENTER);
+        frame.add(pagerPanel,BorderLayout.SOUTH);
         initReportPanel();
         initDetailPanel(new ArrayList<>(pager.getPageData()));
         initPagerPanel();
